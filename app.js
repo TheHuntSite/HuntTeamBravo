@@ -6,13 +6,13 @@ import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebase
    FIREBASE CONFIG
 --------------------------------*/
 const firebaseConfig = {
-  apiKey: "AIzaSyDNSd6smxpEtppVuEhtRaC-19XcyPNglP0",
-  authDomain: "huntsite-64e23.firebaseapp.com",
-  databaseURL: "https://huntsite-64e23-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "huntsite-64e23",
-  storageBucket: "huntsite-64e23.firebasestorage.app",
-  messagingSenderId: "1063124348808",
-  appId: "1:1063124348808:web:c9e835ad82edada18c143d"
+  apiKey: "AIzaSyBgR2nAGe1Y2H0AjZrwL9nmvPXFYMRXSkQ",
+  authDomain: "huntsite2.firebaseapp.com",
+  databaseURL: "https://huntsite2-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "huntsite2",
+  storageBucket: "huntsite2.firebasestorage.app",
+  messagingSenderId: "174140620136",
+  appId: "1:174140620136:web:78da8203b332c173beeadd"
 };
 
 /* -----------------------------
