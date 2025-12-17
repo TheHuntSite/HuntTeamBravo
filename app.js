@@ -6,13 +6,13 @@ import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebase
    FIREBASE CONFIG
 --------------------------------*/
 const firebaseConfig = {
-  apiKey: "AIzaSyBgR2nAGe1Y2H0AjZrwL9nmvPXFYMRXSkQ",
-  authDomain: "huntsite2.firebaseapp.com",
-  databaseURL: "https://huntsite2-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "huntsite2",
-  storageBucket: "huntsite2.firebasestorage.app",
-  messagingSenderId: "174140620136",
-  appId: "1:174140620136:web:78da8203b332c173beeadd"
+  apiKey: "AIzaSyC4-REmLiLySPPnvDvHeE3-lUP64iApC-o",
+  authDomain: "huntsitetest.firebaseapp.com",
+  databaseURL: "https://huntsitetest-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "huntsitetest",
+  storageBucket: "huntsitetest.firebasestorage.app",
+  messagingSenderId: "738219939866",
+  appId: "1:738219939866:web:fa69cbc6d30ffea78f99a3"
 };
 
 /* -----------------------------
@@ -41,6 +41,26 @@ function listenForOverlayChanges() {
   onValue(statusRef, snapshot => {
     if (!snapshot.exists()) return;
     updateOverlays(snapshot.val());
+  });
+}
+
+
+function listenForTeamName() {
+  const teamNameRef = ref(db, "siteConfig/teamName");
+
+  onValue(teamNameRef, snapshot => {
+    if (!snapshot.exists()) return;
+
+    const teamName = snapshot.val();
+
+    // Update browser tab title
+    document.title = teamName;
+
+    // Update visible page title if present
+    const h1 = document.getElementById("team-title");
+    if (h1) {
+      h1.textContent = teamName;
+    }
   });
 }
 
@@ -79,4 +99,5 @@ function addItemClickListeners() {
 document.addEventListener("DOMContentLoaded", () => {
   listenForOverlayChanges();   // LIVE SYNC
   addItemClickListeners();     // attach click handlers
+  listenForTeamName();
 });
